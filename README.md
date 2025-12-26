@@ -29,3 +29,4 @@ Landing estática para CodeLabs con App Router, Tailwind 4 y export estático. I
 - Formulario de contacto abre WhatsApp con los datos capturados.
 - Enlaces legales: `/privacidad`, `/tratamiento-datos`, `/terminos`, `/desuscripcion`.
 - Ajusta emails/teléfono/dirección en `app/(site)/sections/footer.tsx` si cambian.
+- Integraciones pendientes.
