@@ -1,0 +1,16 @@
+export const stackItems = [
+  "Flutter",
+  "NestJS",
+  "Node.js",
+  "Vue.js",
+  "Next.js",
+  "PostgreSQL",
+  "AWS ECS",
+  "AWS Lambda",
+  "EventBridge",
+  "SQS",
+  "RDS",
+  "Docker",
+  "CI/CD",
+  "WordPress",
+];

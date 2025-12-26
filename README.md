@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## CodeLabs Web (Next.js + Tailwind)
 
-## Getting Started
+Landing estática para CodeLabs con App Router, Tailwind 4 y export estático. Incluye secciones de servicios, clientes, AWS, casos, contacto, políticas legales y botón flotante de WhatsApp.
 
-First, run the development server:
+### Requisitos
+- Node 22+ (Volta fijada a 22.21.1 en package.json)
+- npm
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Scripts
+- `npm run dev` — modo desarrollo
+- `npm run build` — build de producción (export estático habilitado)
+- `npm run start` — serve (no necesario si usas `next export`)
+- `npm run lint` — ESLint
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Estructura clave
+- `app/(site)/page.tsx` — landing principal
+- `app/(site)/sections/` — secciones (hero, clientes, capacidades, AWS, fundador, casos, stack, contacto-info, contacto, navbar, footer)
+- `app/ui/` — componentes compartidos (logo, whatsapp-button)
+- `app/data/` — datos de clientes, capacidades, casos y stack
+- `app/(legal)/` — privacidad, tratamiento de datos, términos, desuscripción
+- `public/logos/` — logos de clientes y AWS; favicon e íconos PWA en `public/`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Configuración
+- `next.config.ts` con `output: "export"` y `images.unoptimized: true`
+- Metadatos y dominio apuntan a `https://codelabsecuador.com`
+- Manifest y apple-touch-icon referenciados en `app/layout.tsx`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Notas
+- Formulario de contacto abre WhatsApp con los datos capturados.
+- Enlaces legales: `/privacidad`, `/tratamiento-datos`, `/terminos`, `/desuscripcion`.
+- Ajusta emails/teléfono/dirección en `app/(site)/sections/footer.tsx` si cambian.

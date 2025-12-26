@@ -2,25 +2,56 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0a0a0a;
+  --muted: #161616;
+  --primary-start: #7b3fe4;
+  --primary-end: #c778ff;
+  --surface: #f8f6ff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-display), system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+}
+
+::selection {
+  background: #efe4ff;
+}
+
+.gradient-pill {
+  background: linear-gradient(120deg, var(--primary-start), var(--primary-end));
+}
+
+.soft-shadow {
+  box-shadow: 0 25px 60px rgba(55, 26, 116, 0.12);
+}
+
+.card-border {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.fade-glow {
+  background: radial-gradient(
+    circle at 20% 20%,
+    rgba(123, 63, 228, 0.08),
+    transparent 40%
+  );
 }
